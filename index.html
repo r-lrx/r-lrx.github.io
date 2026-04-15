@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>r-lrx.github.io</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif; background: #0d0d14; color: #e8e8f4; min-height: 100vh; padding: 40px 32px; }
+    header { border-bottom: 1px solid #252535; padding-bottom: 28px; margin-bottom: 36px; display: flex; justify-content: space-between; align-items: flex-end; }
+    h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -1.5px; }
+    h1 span { color: #d4f542; }
+    .sub { font-size: 0.7rem; color: #555568; margin-top: 6px; }
+
+    /* Accordéon */
+    .chapter { border: 1px solid #252535; border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+    .chapter-header { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; cursor: pointer; background: #16161f; transition: background 0.15s; user-select: none; }
+    .chapter-header:hover { background: #1c1c28; }
+    .chapter-title { font-weight: 700; font-size: 1rem; letter-spacing: -0.3px; }
+    .chapter-meta { font-size: 0.65rem; color: #555568; margin-top: 3px; }
+    .chapter-arrow { color: #d4f542; font-size: 0.8rem; transition: transform 0.2s; }
+    .chapter.open .chapter-arrow { transform: rotate(90deg); }
+    .chapter-body { display: none; padding: 12px 22px 18px; border-top: 1px solid #252535; background: #0f0f18; }
+    .chapter.open .chapter-body { display: block; }
+
+    /* Cartes vidéo */
+    .card { background: #16161f; border: 1px solid #252535; border-radius: 8px; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; transition: border-color 0.15s; }
+    .card:last-child { margin-bottom: 0; }
+    .card:hover { border-color: #d4f542; }
+    .left { display: flex; align-items: center; gap: 14px; }
+    .icon { width: 34px; height: 34px; background: #1e1e2d; border-radius: 6px; display: grid; place-items: center; font-size: 13px; color: #d4f542; }
+    .file-name { font-weight: 700; font-size: 0.9rem; }
+    .file-meta { font-size: 0.65rem; color: #555568; margin-top: 3px; }
+    .btn { background: #d4f542; color: #0d0d14; font-size: 0.7rem; font-weight: 700; padding: 8px 14px; border-radius: 5px; text-decoration: none; letter-spacing: 0.5px; white-space: nowrap; }
+    .btn:hover { opacity: 0.8; }
+    .empty { font-size: 0.75rem; color: #3a3a4a; font-style: italic; padding: 8px 0; }
+
+    footer { margin-top: 36px; padding-top: 20px; border-top: 1px solid #252535; font-size: 0.65rem; color: #3a3a4a; }
+  </style>
+
+  <link rel="icon" href="icone.png">
+  
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Romain Leroux</h1>
+      <h2 style="font-size: 1.1rem; font-weight: 700; color: #e8e8f4; margin-bottom: 28px; letter-spacing: -0.3px;">Fichiers supplémentaires pour mon manuscrit de thèse : 
+        <i>Auto-organisation d’une matière active cytosquelettique en géométrie contrôlée.</i></h2>
+    </div>
+  </header>
+  <a href="https://dropsu.sorbonne-universite.fr/s/LxPM998yzPa9L53" class="btn" style="display: inline-block; margin-bottom: 28px;">↓ TOUT TÉLÉCHARGER (.zip)</a>
+<h3 style="font-size: 1.1rem; font-weight: 500; color: #e8e8f4; margin-bottom: 28px; letter-spacing: -0.3px;">Les vidéos sont classées selon le chapitre auquel elles apparaissent.</h3>
+  
+
+  <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S1</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S1.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Plaquage_MT</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 19 MB</div>
+          </div>
+          <a href="videos/Film S1.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+  <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S2</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S2.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 9 MB</div>
+          </div>
+          <a href="videos/Film S2.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+    <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S3</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S3.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 1 MB</div>
+          </div>
+          <a href="videos/Film S3.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+    <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S4</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S4.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 21 MB</div>
+          </div>
+          <a href="videos/Film S4.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+      <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S5</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S5.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 22 MB</div>
+          </div>
+          <a href="videos/Film S5.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+      <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S6</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S6.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 13 MB</div>
+          </div>
+          <a href="videos/Film S6.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+      <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S7</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S7.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 6 MB</div>
+          </div>
+          <a href="videos/Film S7.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+      <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S8</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S8.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 6 MB</div>
+          </div>
+          <a href="videos/Film S8.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+      <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S9</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S9.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 24 MB</div>
+          </div>
+          <a href="videos/Film S9.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+
+      <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S10</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S10.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 24 MB</div>
+          </div>
+          <a href="videos/Film S10.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+
+      <!-- boîte Film  -->
+  <div class="chapter" onclick="toggle(this)">
+    <div class="chapter-header">
+      <div>
+        <div class="chapter-title">Film S11</div>
+      </div>
+      <span class="chapter-arrow">▶</span>
+    </div>
+    <div class="chapter-body">
+    <div class="card" style="align-items: flex-start; gap: 20px; flex-wrap: wrap;">
+        <video width="300" style="border-radius: 6px; flex-shrink: 0; display: block;" controls>
+            <source src="videos/Film S11.mp4" type="video/mp4">
+        </video>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; gap: 10px;">
+          <div>
+            <div class="file-name">Tapis gouttes pattern</div>
+            <div class="file-meta" style="margin-top: 6px;">MP4 · 15 MB</div>
+          </div>
+          <a href="videos/Film S11.mp4" download class="btn" style="align-self: flex-start;">↓ TÉLÉCHARGER</a>
+        </div>
+    </div>
+      
+    </div>
+  </div>
+
+
+
+  <footer>r-lrx.github.io — hébergé sur GitHub Pages</footer>
+
+  <script>
+    function toggle(el) {
+      el.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
